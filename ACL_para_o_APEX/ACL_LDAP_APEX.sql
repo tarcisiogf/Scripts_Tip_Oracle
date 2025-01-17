@@ -13,9 +13,6 @@
    -- 3 Assign_Acl    
    EXEC Dbms_Network_Acl_Admin.Assign_Acl (Acl => 'ldap.xml', Host => 'SEU_IP');
    EXEC Dbms_Network_Acl_Admin.Assign_Acl (Acl => 'ldap.xml', Host => 'SEU_SERVIDOR');   
-
-   EXEC Dbms_Network_Acl_Admin.Assign_Acl (Acl => 'ldap.xml', Host => '10.120.100.209');
-   EXEC Dbms_Network_Acl_Admin.Assign_Acl (Acl => 'ldap.xml', Host => 'srv-pge-209.in.pge.rj.gov.br');   
    COMMIT;
    
    -- 4. Check acls and privs   
@@ -33,5 +30,3 @@
    Exec DBMS_NETWORK_ACL_ADMIN.drop_acl ( acl =>'ldap.xml');   COMMIT;
    */
 
-   //d $ORACLE_HOME/ldap/lib
-    make -f ins_ldap.mk ORACLE_HOME=$ORACLE_HOME clientonlyinstall

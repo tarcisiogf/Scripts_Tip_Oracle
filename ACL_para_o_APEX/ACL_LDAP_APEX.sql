@@ -21,7 +21,7 @@
    select * from xdb.resource_view  where upper( any_path) LIKE upper( '%acls/%ldap%') order by  2;
    
   -- 5. Delete ACL / Privs / Unassign
-  /*
+  /* I left this part so as not to run the risk of unintentional execution.
    Exec Dbms_Network_Acl_Admin.Unassign_Acl (Host => 'SEU_IP');                   commit;
    Exec Dbms_Network_Acl_Admin.Unassign_Acl (Host => 'SEU_SERVIDOR');     commit;
    Exec Dbms_Network_Acl_Admin.Delete_Privilege (Acl => 'ldap.xml', Principal => 'PUBLIC', Is_Grant => TRUE, Privilege => 'resolve'); commit;
